@@ -1,10 +1,8 @@
 import math
 import matplotlib.pyplot as plt
 
+# alias pi so that equations look pretty
 π = math.pi
-
-midpoint_x = math.cos(π/3)  # 60° round the circle
-midpoint_y = math.sin(π/3)
 
 
 def float_range(min, max):
@@ -15,10 +13,12 @@ def float_range(min, max):
 
 
 def setup_plot():
+    # Fix the plot area's aspect ratio so that squares are square
     plt.gca().set_aspect('equal', adjustable='datalim')
 
 
 def draw_unit_circle():
+    # draw a unit circle centered on the origin
     xs = []
     ys = []
 
@@ -29,6 +29,7 @@ def draw_unit_circle():
 
 
 def draw_circle(centre, r):
+    # draw a circle centred at `center` [x,y], of radius r
     x, y = centre
 
     xs = []
@@ -51,6 +52,8 @@ def point_is_on_circle(point, center, radius):
 
 
 def draw_tangent(point, center, radius):
+    # draw a tangent to the circle centered at `center`, with radius `r`
+    # the tangent should meet the circle at `point`
     if (not point_is_on_circle(point, center, radius)):
         print(point)
         raise Exception(
